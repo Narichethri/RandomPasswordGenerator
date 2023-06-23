@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Random password</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body>
+  <div class="input">
+    <h1>Generate a<br><span>Random password</span></h1>
+    <input type="text" name="password" id="password" placeholder="password">
+    <i class="fas fa-copy" id="icon" onclick="passcopy()"></i><br><br>
+    <input class="leng" id="len" type="number" min="4" max="20" value="8"><br>
+    <button id="button" onclick="generator()">Generate</button>
+  </div>
+
+<script>
+  const passwordbox=document.getElementById('password');
+  const len=document.getElementById('len');
+  const uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowercase='abcdefghijklmnopqrstuvwxyz';
+  const number="1234567890";
+  const special="~@!#$%^&*_-{[]}";
+  const allchar=special+uppercase+lowercase+number;
+
+  function generator(){
+    
+    const length=parseInt(len.value);
+    let password="";
+    password += uppercase[Math.floor(Math.random() * uppercase.length)]
+    password += lowercase[Math.floor(Math.random() * lowercase.length)]
+    password += number[Math.floor(Math.random() * number.length)]
+    password += special[Math.floor(Math.random() * special.length)]
+
+    while(length > password.length){
+      password += allchar[Math.floor(Math.random() * allchar.length)]
+
+    }
+    passwordbox.value=password;
+}
+ function passcopy(){
+      passwordbox.select();
+      navigator.clipboard.writeText(passwordbox.value)
+      if(passwordbox.value==''){
+      alert("generate the password");}
+      else{
+        alert("Copied successfully");
+
+      }
+ }
+
+
+</script>
+ 
+
+
+</body>
+
+</html>

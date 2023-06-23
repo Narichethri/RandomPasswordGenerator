@@ -1,0 +1,57 @@
+body{
+    background-color:midnightblue;
+    height:100vh;
+    color:white;
+    background-image:url(image1.jpg);
+}
+.input{
+    position:absolute;
+    top:40%;
+    left:20%;
+    transform:translate(-50%,-50%);
+    
+}
+.input h1 span{
+    color:aquamarine;
+    border-bottom:2px solid darkseagreen;
+    padding-bottom:7px;
+}
+.input input{
+    min-width:250px;
+    max-width:250px;
+    height:18px;
+    border-radius:8px;
+    padding:10px;
+    border:none;
+   
+}
+.input input:focus{
+    outline:none;
+}
+#icon{
+    position:absolute;
+    color:dimgrey;
+    font-size:20px;
+    margin-top:10px;
+    margin-left:-30px;
+    font-weight:bold;
+    
+}
+.input button{
+    margin:20px 0;
+    padding:10px 10px;
+    border-radius:10px;
+    background-color:darkseagreen;
+    font-weight:600;
+    border:none;
+    width:100px;
+
+
+}
+.length{
+    width:10px;
+}
+.input button:focus{
+    outline:none;
+    border:none;
+}
